@@ -1,0 +1,96 @@
+---
+
+---
+
+<header>
+	<div class="container">
+        <div class="phone-number">Phone: (832)&nbsp;862&#8209;6255</div>
+		<img class="main-logo" src="/nautica-banner.png" alt="main-logo" onclick="location.replace('/');">
+        <a href="tel:832-862-6255">
+            <div class="phone"></div>
+            <div class="pop-up-number">(832)&nbsp;862&#8209;6255</div>
+        </a>
+	</div>
+</header>
+<style>
+    header{
+		background-color: #189eff75;
+		height: 44px;
+		padding: 2px 0px;
+		position: fixed;
+		top:0;
+        left: 0;
+        right: 0;
+        box-shadow: 0px 0px 5px black;
+		z-index: 99;
+	}
+
+	.container{
+		position: relative;
+		height: 100%;
+		width: 100%;
+	}
+
+	.main-logo{
+		position: absolute;
+		height: inherit;
+		left: 50%;
+		top:-0.5px;
+		transform: translateX(-50%);
+		cursor: pointer;
+	}
+
+    .phone-number{
+        height: 43px;
+        width: fit-content;
+        margin-inline: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-weight: 700;
+        color: white;
+    }
+
+    .phone{
+        display: none;
+        background-image: url("/phone.png");
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        transform: scaleX(-1);
+        height: 44px;
+        width: 44px;
+        right: 4px;
+        top: 0;
+    }
+    .pop-up-number{
+        display: none;
+        position: absolute;
+        right: 3px;
+        top: 49px;
+        padding: 15px;
+        background-color: #189eff;
+        border: 2px solid white;
+    }
+
+    @media only screen and (max-width: 600px){
+		.phone-number{
+			display: none;
+		}
+        .main-logo{
+            left: 5px;
+            transform: none;
+        }
+        .phone{
+            display: block;
+        }
+        .phone:focus + .pop-up-number,
+        .phone:hover + .pop-up-number{
+            display: block;
+            color: white;
+        }
+        .pop-up-number{
+           
+        }
+	}
+</style>

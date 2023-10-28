@@ -1,0 +1,152 @@
+
+<div class="container">
+    <!-- <img class="hero-img" src="/hero2-min.webp" alt="hero-img"> -->
+    <div class="hero-section">
+        <div class="bottom-container">
+            <img class="sponge" src="/sponge.svg" alt="sponge">
+                <div class="click-me">Click Me!</div>
+            </img>
+            <div class="text-container">
+                Protect what you value most, so you can drive it to the ends of the earth.
+                <div class="pricing-below">Pricing Below</div>
+                
+            </div>
+            <img class="tag-logo" src="/nautica-banner.png" alt="logo"/>
+        </div>
+    </div>
+</div>
+<style>
+    .container{
+        position: relative;
+        width: 100%;
+        box-shadow: 0px 0px 5px black;
+    }
+    .hero-section{
+        position: relative;
+        margin-top: 48px;
+        width: 100%;
+        height: 640px;
+    }
+    .hero-section::before{
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        min-height: 600px;
+        background-image: url("/mustang-car-wash.webp");
+        background-size: cover;
+        background-position: center;
+        filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+        transition: 450ms;
+    }
+    .hero-section:has(.bottom-container:hover)::before{
+        filter: none;
+        -webkit-filter: grayscale(0%); /* Chrome 19+ & Safari 6+ */
+    }
+    .hero-section:hover::before{
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+    }
+    .bottom-container{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        bottom: 25%;
+        transform: translate(0%, 50%);
+        right: 5%;
+        max-width: 600px;
+        width: 65vw;
+        min-height: 200px;
+        padding:0 25px;
+    }
+    .bottom-container::before{
+        content: "";
+        position: absolute;
+        width: 105%; height: 155%;
+        right: 0%; top: 0%;
+        transform: translate(5%, -26%);
+        background-color: rgba(58, 137, 228, 0.60);
+        mask-image: url("puddle.svg");
+        -webkit-mask-image: url("/puddle.svg");
+        mask-position: center;
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        clip-path: url("/puddle.svg");
+    }
+    .sponge{
+        position: absolute;
+        top: 0;
+        right: 20%;
+        height: 140px;
+        width: 140px;
+        transform: translate(55%, -70%);
+    }
+    .text-container{
+        position: relative;
+        font-size: 20pt;
+        text-align: center;
+        width: 80%;
+        padding: 0 10%;
+        font-weight: 500;
+        margin: auto 0;
+        color: white;
+    }
+    .pricing-below{
+        padding-top: 12px;
+    }
+    .click-me{
+        position: absolute;
+        top: 0;
+        right: 20%;
+        font-size: 14pt;
+        padding-top: 8px;
+        transform: translate(65%, -150%);
+        color: rgb(230, 255, 255);
+        font-weight: 700;
+    }
+    .tag-logo{
+        position: absolute;
+        width: 120px;
+        left: 45%;
+        top: 0px;
+        transform: translate(-50%, -50%);
+    }
+    button{
+        background-color: #AC0000;
+        border: 1px dotted black;
+        aspect-ratio: 5/2;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14pt;
+        cursor: pointer;
+        padding: 6px;
+    }
+    button::after{
+		content: "";
+		display: block;
+		bottom: 0;
+		height: 1px;
+		width: 0px;
+		border-radius: 2px;
+		transition: 250ms;
+	}
+    button:hover::after,
+    button:focus::after{
+		content: "";
+		width: 100%;
+		background-color: white; 
+	}
+    @media only screen and (max-width: 630px){
+        
+        .text-container{
+            font-size: 14pt;
+            transform: translateY(-25%);
+        }
+    }
+</style>

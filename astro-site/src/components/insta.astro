@@ -1,0 +1,115 @@
+---
+---
+
+<div class="container">
+    <div class="pad">-- Looking Fresh -- Check out our work on Instagram --</div>
+    <div class="handle">@North_Nautica</div>
+    <div class="subtitle">Click and watch the color come alive</div>
+    <div class="seperator"></div>
+    <div class="flex-container">
+        <div class="pix pic1"></div>
+        <div class="pix pic2"></div>
+        <div class="pix pic3"></div>
+        <div class="pix pic4"></div>
+    </div>
+</div>
+
+<style>
+    .container{
+        height: 450px;
+        padding-bottom: 8vh;
+        text-align: center;
+        font-size: 22pt;
+        background-color: dimgray;
+        transition: 300ms ease-in;
+        color: white;
+        box-shadow: 0px 0px 5px black;
+    }
+    .container:has(.pix:hover, .pix:active){
+        padding-bottom: 36vh;
+        background-color: #189eff65;
+    }
+    .pad{
+        padding-top: 22px;
+    }
+    .handle{
+        padding-top: 8px;
+        font-size: 15pt;
+    }
+    .subtitle{
+        font-size: 14pt;
+        padding-top: 6px;
+    }
+    .seperator{
+        height: 35px;
+    }
+    .flex-container{
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        gap: 25px;
+    }
+    .pic1::before{
+        background-image: url('/beamer-detail.png');
+        background-position: center;
+        background-size: cover;
+    }
+    .pic2::before{
+        background-image: url('/CT4-detail.png');
+        background-position: center;
+        background-size: cover;
+    }
+    .pic3::before{
+        background-image: url('/taco-detail.png');
+        background-position: center;
+        background-size: cover;
+    }
+    .pic4::before{
+        background-image: url('/tahoe-detail.png');
+        background-position: center;
+        background-size: cover;
+    }
+    .pix{
+        width: 18%;
+        aspect-ratio: 3/4;
+        box-shadow: 0px 5px 5px black;
+        transition: 300ms ease-in;
+    }
+    .pix:hover, .pix:active{
+        width: 26%;
+    }
+    .pix::before{
+        content: "";
+        display: block;
+        width: 100%; height: 100%;
+        /* background-color: aquamarine; */
+        filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+        transition: 300ms;
+    }
+    .pix:hover::before,
+    .pix:active::before{
+        filter: none;
+        -webkit-filter: grayscale(0%); /* Chrome 19+ & Safari 6+ */
+    }
+    @media only screen and (max-width: 900px){
+        .container{
+            height: unset;
+            padding-bottom: 35px;
+        }
+        .container:has(.pix:hover, .pix:active){
+            padding-bottom: unset;
+        }
+		.flex-container{
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .pix{
+            width: 35%;
+        }
+        .pix:hover, .pix:active{
+            width: 46%;
+        }
+	}
+</style>
